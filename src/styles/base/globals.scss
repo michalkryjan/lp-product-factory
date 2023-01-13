@@ -1,0 +1,25 @@
+@use 'variables';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: map-get(variables.$fontFamilies, primary);
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+#__next {
+  width: 100%;
+}
