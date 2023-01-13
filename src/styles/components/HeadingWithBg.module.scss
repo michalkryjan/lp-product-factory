@@ -1,0 +1,19 @@
+.headingWithBg {
+  position: relative;
+  width: fit-content;
+
+  &__heading {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: #000;
+  }
+
+  &__bg {
+    z-index: 1;
+    width: fit-content;
+  }
+}
