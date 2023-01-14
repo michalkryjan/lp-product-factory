@@ -1,60 +1,66 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from '/src/styles/components/TopMenuBar.module.scss';
 
 const TopMenuBar = () => {
     return (
-        <div className='topMenuBar'>
-            <nav className='topMenu' aria-label='Main Menu'>
+        <div className={styles.topMenuBar}>
+            <nav className={styles.topMenu} aria-label='Main Menu'>
                 <ul>
-                    <li className={'topMenu__item topMenu__item--logo'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemLogo}`}>
                         <Link href={'#start'}>
-                            <Image src={''} />
+                            <Image
+                                className={styles.topMenu__logo}
+                                src={'/assets/company-logo.svg'}
+                                width={122}
+                                height={52}
+                            />
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             Projects
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             Partners
                         </Link>
                     </li>
-                    <li className={'topMenu__item top-menu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             FAQ
                         </Link>
                     </li>
-                    <li className={'topMenu__item top-menu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             Masters
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             Classes
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             Course Experience
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--default'}>
-                        <Link className={'topMenu__link'} href={'#'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemDefault}`}>
+                        <Link className={styles.topMenu__link} href={'#'}>
                             About us
                         </Link>
                     </li>
-                    <li className={'topMenu__item topMenu__item--cta'}>
-                        <Link className='topMenu__cta' href={'#start'}>
+                    <li className={`${styles.topMenu__item} ${styles.topMenu__itemCta}`}>
+                        <Link className={styles.topMenu__ctaBtn} href={'#start'}>
                             Register
                         </Link>
                     </li>
                 </ul>
             </nav>
-            <button className='topMenuBar__hamburger' aria-label='Main Menu'>
+            <button className={styles.topMenuBar__hamburger} aria-label='Main Menu'>
                 <svg
                     viewBox='0 0 100 100'
                     width='60'

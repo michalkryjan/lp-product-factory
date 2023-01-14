@@ -1,0 +1,77 @@
+@use '/src/styles/base/variables';
+@use '/src/styles/utils/underlineEffectOnHover';
+
+.topMenuBar {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  max-width: variables.$maxContentWidth;
+  transform: translateY(0);
+  transition: ease-in-out 0.5s;
+  display: inline-flex;
+  align-items: center;
+  background: #111111;
+  height: fit-content;
+  margin-top: 35px;
+  font-family: map-get(variables.$fontFamilies, secondary);
+
+  &__hamburger {
+    display: none;
+  }
+}
+
+.topMenu {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+
+  & > ul {
+    display: contents;
+  }
+
+  &__item {
+    width: fit-content;
+    text-decoration: none;
+
+    &Default {
+      padding: 5px 20px 2px;
+      margin-inline: 17px;
+      @include underlineEffectOnHover.underlineEffectOnHover();
+    }
+
+    &Logo {
+      margin-right: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    &Cta {
+      margin-left: auto;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    color: #FFF;
+    text-decoration: none;
+
+  }
+
+  &__logo {
+    margin-bottom: -6px;
+  }
+
+  &__ctaBtn {
+    $height: 52px;
+    width: 150px;
+    height: $height;
+    border-radius: calc(#{$height} / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    text-decoration: none;
+    color: #FFF;
+    background: #292929;
+  }
+}
