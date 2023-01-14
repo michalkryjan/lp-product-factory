@@ -16,6 +16,7 @@ body {
   font-family: map-get(variables.$fontFamilies, primary);
   font-weight: 400;
   letter-spacing: 0.3px;
+  background: #FAFAFA;
 }
 
 body * {

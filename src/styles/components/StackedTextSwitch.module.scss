@@ -1,0 +1,84 @@
+.stackedTextSwitchMenu {
+  list-style-type: none;
+  padding: 0;
+  width: 90%;
+  max-width: 1016px;
+  height: 60px;
+  display: inline-flex;
+  overflow: hidden;
+  margin: 65px 0 88px;
+
+  & > li {
+    display: contents;
+  }
+
+  & > li > &__btn {
+    flex-grow: 5;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #000;
+    font-size: 18px;
+    color: #000;
+    transition: ease 0.3s;
+
+    &Active {
+      background: #000;
+      color: #FFF;
+    }
+
+    &:not(&Active):hover {
+      cursor: pointer;
+    }
+  }
+
+  & > li:first-of-type > &__btn {
+    border-radius: 16px 0 0 16px;
+  }
+
+  & > li:last-of-type > &__btn {
+    border-radius: 0 16px 16px 0;
+  }
+
+  & > li:first-of-type > &__btn,
+  & > li:last-of-type > &__btn {
+    flex-grow: 6;
+  }
+}
+
+.stackedTextSwitch {
+  width: 100%;
+  max-width: 1174px;
+  min-height: 320px;
+  display: inline-flex;
+  gap: 80px;
+
+  &__layersWrapper {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px;
+  }
+
+  &__layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+
+    &Active {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    text-align: left;
+    line-height: 2.4;
+  }
+
+  &__decorationImg {
+    margin-top: 35px;
+  }
+}
