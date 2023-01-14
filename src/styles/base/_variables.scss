@@ -1,14 +1,10 @@
-@font-face {
-  font-family: 'Product Sans';
-  src: url('../../../public/assets/product-sans-font/product_sans_regular-webfont.woff2') format('woff2'),
-  url('../../../public/assets/product-sans-font/product_sans_regular-webfont.woff') format('woff');
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=PT+Sans:wght@400;700&display=swap');
 
 $maxContentWidth: 1460px;
 
 $fontFamilies: (
-        primary: #{'Product Sans', serif},
+        primary: #{'PT Sans', sans-serif},
+        secondary: #{'Hind', sans-serif}
 );
 
 $colors: (
