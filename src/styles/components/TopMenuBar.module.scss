@@ -1,19 +1,20 @@
-@use '/src/styles/base/variables';
-@use '/src/styles/utils/underlineEffectOnHover';
+@use '/src/styles/base/variables' as global_vars;
+@use '/src/styles/utils/hoverEffects' as hoverEffects;
+@use '/src/styles/utils/mediaQueries' as mq;
 
 .topMenuBar {
   z-index: 10;
   position: absolute;
+  top: 40px;
   width: 100%;
-  max-width: variables.$maxContentWidth;
   transform: translateY(0);
   transition: ease-in-out 0.5s;
   display: inline-flex;
-  align-items: center;
+  justify-content: center;
   background: #111111;
-  height: fit-content;
-  margin-top: 35px;
-  font-family: map-get(variables.$fontFamilies, secondary);
+  height: 72px;
+  padding-block: 10px;
+  font-family: map-get(global_vars.$fontFamilies, secondary);
 
   &__hamburger {
     display: none;
@@ -22,11 +23,14 @@
 
 .topMenu {
   width: 100%;
+  max-width: global_vars.$maxContentWidth;
   display: inline-flex;
   align-items: center;
+  letter-spacing: 0.1px;
 
   & > ul {
     display: contents;
+    list-style-type: none;
   }
 
   &__item {
@@ -36,7 +40,7 @@
     &Default {
       padding: 5px 20px 2px;
       margin-inline: 17px;
-      @include underlineEffectOnHover.underlineEffectOnHover();
+      @include hoverEffects.underlineOnHover();
     }
 
     &Logo {
@@ -54,7 +58,6 @@
     font-size: 18px;
     color: #FFF;
     text-decoration: none;
-
   }
 
   &__logo {
@@ -63,6 +66,8 @@
 
   &__ctaBtn {
     $height: 52px;
+    $hover-transition: ease-in-out 0.3s;
+    position: relative;
     width: 150px;
     height: $height;
     border-radius: calc(#{$height} / 2);
@@ -73,5 +78,7 @@
     text-decoration: none;
     color: #FFF;
     background: #292929;
+    transition: $hover-transition;
+    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px);
   }
 }

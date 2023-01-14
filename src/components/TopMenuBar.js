@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '/src/styles/components/TopMenuBar.module.scss';
+import styles from '@/styles/components/TopMenuBar.module.scss';
 
 const TopMenuBar = () => {
     return (

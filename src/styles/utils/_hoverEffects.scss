@@ -1,0 +1,45 @@
+@use './mediaQueries' as mq;
+
+@mixin underlineOnHover($lineWidth: 2em, $bottom: 0) {
+  @include mq.forDevices(laptop desktop-all) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      width: 0;
+      height: 1px;
+      bottom: $bottom;
+      background: #FFF;
+      transition: ease-in-out 0.2s;
+    }
+    &:hover::after {
+      width: $lineWidth;
+    }
+  }
+}
+
+@mixin ctaArrowFadeOnHover($transition, $startPositionFromRight, $endPositionFromRight, $arrowSize: 16px) {
+  @include mq.forDevices(laptop desktop-all) {
+    &:after {
+      position: absolute;
+      content: '▶';
+      right: $startPositionFromRight;
+      opacity: 0;
+      font-size: $arrowSize;
+      margin-bottom: -2px;
+      transition: $transition;
+    }
+
+    &:hover {
+      padding-right: 15px;
+
+      &:after {
+        right: $endPositionFromRight;
+        opacity: 1;
+      }
+    }
+  }
+}

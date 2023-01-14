@@ -1,19 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from '/src/styles/components/HeadingWithBg.module.scss';
+import styles from '@/styles/components/HeadingWithBg.module.scss';
 
-const HeadingWithBg = ({ as, text, bgImageSrc, bgImageAlt, width, height }) => {
+const HeadingWithBg = ({ as, text, bgSrc, bgAlt, bgWidth, bgHeight, headingModifierClass }) => {
     const Heading = as;
 
     return (
         <div className={styles.headingWithBg}>
-            <Heading className={styles.headingWithBg__heading}>{text}</Heading>
+            <Heading className={`${styles.headingWithBg__heading} ${headingModifierClass}`}>
+                {text}
+            </Heading>
             <Image
                 className={styles.headingWithBg__bg}
-                src={bgImageSrc}
-                alt={bgImageAlt}
-                width={width}
-                height={height}
+                src={bgSrc}
+                alt={bgAlt}
+                width={bgWidth}
+                height={bgHeight}
             />
         </div>
     );
