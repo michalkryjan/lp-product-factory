@@ -1,19 +1,19 @@
-@use '/src/styles/base/variables' as global_vars;
-@use '/src/styles/utils/hoverEffects' as hoverEffects;
-@use '/src/styles/utils/mediaQueries' as mq;
+@use '../base/variables' as global_vars;
+@use '../utils/hoverEffects' as hoverEffects;
+@use '../utils/mediaQueries' as mq;
+@use '../utils/layout' as layout;
 
 .topMenuBar {
   z-index: 10;
+  width: 100%;
   position: absolute;
   top: 40px;
-  width: 100%;
-  transform: translateY(0);
   transition: ease-in-out 0.5s;
   display: inline-flex;
   justify-content: center;
   background: #111111;
-  height: 72px;
-  padding-block: 10px;
+  height: 82px;
+  padding-block: 15px;
   font-family: map-get(global_vars.$fontFamilies, secondary);
 
   &__hamburger {
@@ -22,8 +22,7 @@
 }
 
 .topMenu {
-  width: 100%;
-  max-width: global_vars.$maxContentWidth;
+  @include layout.maxWidthContainer;
   display: inline-flex;
   align-items: center;
   letter-spacing: 0.1px;

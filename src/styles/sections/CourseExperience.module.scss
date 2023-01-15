@@ -1,6 +1,0 @@
-@use './src/styles/base/defaults.module' as defaults;
-
-.courseExperience {
-  @include defaults.bigContentCard();
-  padding-bottom: 110px;
-}

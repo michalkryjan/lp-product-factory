@@ -1,4 +1,4 @@
-@use './mediaQueries' as mq;
+@use 'src/styles/utils/mediaQueries' as mq;
 
 @mixin underlineOnHover($lineWidth: 2em, $bottom: 0) {
   @include mq.forDevices(laptop desktop-all) {

@@ -1,0 +1,32 @@
+.socialsNav {
+  width: fit-content;
+  height: fit-content;
+  gap: 40px;
+  padding: 0;
+
+  & > ul {
+    list-style-type: none;
+  }
+
+  & > ul,
+  & > ul > li,
+  & > ul > li > a {
+    display: contents;
+  }
+
+  &__icon {
+    margin: 0;
+  }
+
+  &Horizontal {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &Vertical {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}

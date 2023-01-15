@@ -1,11 +1,11 @@
-@use './src/styles/base/defaults.module' as defaults;
-@use './src/styles/base/variables' as global_variables;
-@use './src/styles/utils/hoverEffects' as hoverEffects;
+@use '../base/variables' as global_variables;
+@use '../utils/hoverEffects' as hoverEffects;
+@use '../utils/layout' as layout;
 
 .hero {
-  @include defaults.bigContentCard();
+  @include layout.bigContentCard;
   position: absolute;
-  top: 152px;
+  top: 162px;
   min-height: 788px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

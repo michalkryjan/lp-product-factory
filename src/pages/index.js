@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import React from 'react';
-import defaults from '@/styles/base/defaults.module.scss';
 import TopMenuBar from '@/components/TopMenuBar';
-import Hero from '@/sections/Hero';
-import CourseExperience from '@/sections/CourseExperience';
+import HeroSection from '@/sections/HeroSection';
+import CourseExperienceSection from '@/sections/CourseExperienceSection';
+import SocialsNav from '@/components/SocialsNav';
+import Image from 'next/image';
+import styles from '@/styles/pages/index.module.scss';
+import RegisterSection from '@/sections/RegisterSection';
 
 export default function Home() {
     return (
@@ -12,16 +15,33 @@ export default function Home() {
                 <title>Product Factory</title>
                 <meta name='description' content='Product Factory homepage' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
+                <link rel='icon' href='/favicon.ico' />
             </Head>
-            <body>
-                <header className={defaults.pageHeader}>
-                    <TopMenuBar />
-                    <Hero />
-                </header>
-                <main className={defaults.mainContent}>
-                    <CourseExperience />
-                </main>
-            </body>
+            <header className={styles.indexHeader}>
+                <TopMenuBar />
+            </header>
+            <main className={styles.indexMain}>
+                <div className={styles.indexMain__header}>
+                    <HeroSection />
+                </div>
+                <CourseExperienceSection />
+                <RegisterSection />
+            </main>
+            <footer className={styles.indexFooter}>
+                <div className={styles.indexFooter__contentWrapper}>
+                    <SocialsNav iconSize={28} />
+                    <Image
+                        src={'/assets/company-logo-black.svg'}
+                        width={165}
+                        height={70}
+                        alt={'Product Factory logo'}
+                        className={styles.indexFooter__companyLogo}
+                    />
+                    <p className={styles.indexFooter__additionalInfo}>
+                        Contact Number: 0912-1234567
+                    </p>
+                </div>
+            </footer>
         </>
     );
 }

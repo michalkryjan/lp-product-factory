@@ -5,8 +5,7 @@
   max-width: 1016px;
   height: 60px;
   display: inline-flex;
-  overflow: hidden;
-  margin: 65px 0 88px;
+  margin: 65px 0 88px -1px;
 
   & > li {
     display: contents;
@@ -20,6 +19,7 @@
     font-size: 18px;
     color: #000;
     transition: ease 0.3s;
+    margin-right: -1px;
 
     &Active {
       background: #000;

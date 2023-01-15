@@ -12,9 +12,10 @@ const TopMenuBar = () => {
                         <Link href={'#start'}>
                             <Image
                                 className={styles.topMenu__logo}
-                                src={'/assets/company-logo.svg'}
+                                src={'/assets/company-logo-white.svg'}
                                 width={122}
                                 height={52}
+                                alt={'Product Factory logo'}
                             />
                         </Link>
                     </li>

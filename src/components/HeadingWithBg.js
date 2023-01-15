@@ -2,7 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/components/HeadingWithBg.module.scss';
 
-const HeadingWithBg = ({ as, text, bgSrc, bgAlt, bgWidth, bgHeight, headingModifierClass }) => {
+const HeadingWithBg = ({
+    as,
+    text,
+    bgSrc,
+    bgAlt,
+    bgWidth,
+    bgHeight,
+    bgPriority = false,
+    headingModifierClass
+}) => {
     const Heading = as;
 
     return (
@@ -16,6 +25,7 @@ const HeadingWithBg = ({ as, text, bgSrc, bgAlt, bgWidth, bgHeight, headingModif
                 alt={bgAlt}
                 width={bgWidth}
                 height={bgHeight}
+                priority={bgPriority}
             />
         </div>
     );

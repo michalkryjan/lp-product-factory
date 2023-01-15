@@ -19,18 +19,16 @@ const StackedTextSwitch = ({
             <menu className={styles.stackedTextSwitchMenu} aria-label={ariaLabel}>
                 {menuOptions.map((option, id) => {
                     return id === activeLayerId ? (
-                        <li>
+                        <li key={id}>
                             <button
-                                key={id}
                                 disabled
                                 className={`${styles.stackedTextSwitchMenu__btn} ${styles.stackedTextSwitchMenu__btnActive}`}>
                                 {option}
                             </button>
                         </li>
                     ) : (
-                        <li>
+                        <li key={id}>
                             <button
-                                key={id}
                                 onClick={() => setActiveLayerId(id)}
                                 className={styles.stackedTextSwitchMenu__btn}>
                                 {option}

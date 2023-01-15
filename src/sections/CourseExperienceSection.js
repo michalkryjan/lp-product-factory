@@ -1,9 +1,9 @@
 import React from 'react';
 import HeadingWithBg from '@/components/HeadingWithBg';
 import StackedTextSwitch from '@/components/StackedTextSwitch';
-import styles from '@/styles/sections/CourseExperience.module.scss';
+import styles from '@/styles/sections/CourseExperienceSection.module.scss';
 
-const CourseExperience = () => {
+const CourseExperienceSection = () => {
     const paragraphsTab1 = [
         `Cum, quo, sit? Distinctio eligendi illum perferendis repellendus temporibus? Alias 
                     asperiores cumque dolores doloribus ea eum ex, illo in inventore iste iure minima molestias natus 
@@ -36,6 +36,7 @@ const CourseExperience = () => {
                 bgSrc={'/assets/heading-backgrounds/Experience.svg'}
                 bgWidth={612}
                 bgHeight={159}
+                bgAlt={'Experience'}
             />
             <StackedTextSwitch
                 ariaLabel={'Course Experience description based on selected level.'}
@@ -49,9 +50,10 @@ const CourseExperience = () => {
                 decorationImgSrc={'assets/course-experience-decoration.svg'}
                 imgWidth={326}
                 imgHeight={281}
+                imgAlt={'Product Factory badge'}
             />
         </section>
     );
 };
 
-export default CourseExperience;
+export default CourseExperienceSection;

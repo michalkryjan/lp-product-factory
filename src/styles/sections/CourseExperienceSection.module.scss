@@ -1,0 +1,6 @@
+@use '../utils/layout' as layout;
+
+.courseExperience {
+  @include layout.bigContentCard;
+  padding-bottom: 110px;
+}

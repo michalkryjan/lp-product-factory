@@ -2,10 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeadingWithBg from '@/components/HeadingWithBg';
-import heroStyles from '@/styles/sections/Hero.module.scss';
+import heroStyles from '@/styles/sections/HeroSection.module.scss';
 import headingStyles from '@/styles/components/HeadingWithBg.module.scss';
 
-const Hero = () => {
+const HeroSection = () => {
     return (
         <section className={heroStyles.hero}>
             <div className={heroStyles.hero__textWrapper}>
@@ -17,6 +17,8 @@ const Hero = () => {
                         bgSrc={'/assets/heading-backgrounds/UI_UX.svg'}
                         bgWidth={550}
                         bgHeight={126}
+                        bgAlt={'UI UX'}
+                        bgPriority={true}
                         headingModifierClass={headingStyles.headingWithBg__headingHero}
                     />
                 </hgroup>
@@ -34,10 +36,11 @@ const Hero = () => {
                     width={530}
                     height={570}
                     alt={'Product Design Course - Product Factory - 30 August'}
+                    priority
                 />
             </div>
         </section>
     );
 };
 
-export default Hero;
+export default HeroSection;

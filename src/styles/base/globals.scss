@@ -8,15 +8,18 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-family: map-get(variables.$fontFamilies, primary);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  background: #FAFAFA;
+}
+
+main {
   height: fit-content;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  font-family: map-get(variables.$fontFamilies, primary);
-  font-weight: 400;
-  letter-spacing: 0.3px;
-  background: #FAFAFA;
 }
 
 body * {
