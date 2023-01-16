@@ -1,5 +1,4 @@
 @use '../base/variables' as global_vars;
-@use '../utils/hoverEffects' as hoverEffects;
 @use '../utils/mediaQueries' as mq;
 @use '../utils/layout' as layout;
 
@@ -14,87 +13,96 @@
   height: 92px;
   padding-block: 20px;
   font-family: map-get(global_vars.$fontFamilies, secondary);
-  transition: transform 0.3s ease-in;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.3s ease-in-out;
+
+  @include mq.forDevices(mobile tablet) {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+  }
 
   &__hamburger {
-    position: absolute;
-    right: 40px;
-    top: 8px;
-    display: none;
+    @include mq.forDevices(mobile tablet) {
+      display: block;
+      position: absolute;
+      $width: 30px;
+
+      right: 20px;
+    }
+
+    @include mq.forDevices(mobile) {
+      display: block;
+      position: absolute;
+      right: 20px;
+    }
+
+    @include mq.forDevices(laptop desktop-all) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    z-index: 15;
+
+    @include mq.forDevices(mobile tablet) {
+      position: absolute;
+      left: 20px;
+      max-height: 40px;
+      max-width: 100px;
+      top: 5px;
+    }
+
+    @include mq.forDevices(laptop) {
+      max-height: 40px;
+      margin-right: 0;
+    }
+
+    @include mq.forDevices(desktop-s) {
+      max-height: 44px;
+      margin-right: 10px;
+    }
+
+    @include mq.forDevices(desktop-l) {
+      max-height: 48px;
+      margin-right: 22px;
+    }
+
+    @include mq.forDevices(desktop-xl) {
+      margin-bottom: -6px;
+      margin-right: 38px;
+    }
+  }
+
+  &__contentWrapper {
+    @include layout.maxWidthContainer;
+    width: 90%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    @include mq.forDevices(mobile tablet) {
+      width: 100%;
+    }
+
+    @include mq.forDevices(laptop) {
+      width: 100%;
+      padding-inline: 5px;
+    }
   }
 
   &StickyTop {
     position: fixed;
     top: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   }
 
-  &Visible {
+  &VisibleDesktop {
     transform: translateY(0);
   }
 
-  &Hidden {
+  &HiddenDesktop {
     transform: translateY(-110%);
   }
 }
 
-.topMenu {
-  @include layout.maxWidthContainer;
-  display: inline-flex;
-  align-items: center;
-  letter-spacing: 0.1px;
 
-  & > ul {
-    display: contents;
-    list-style-type: none;
-  }
-
-  &__item {
-    width: fit-content;
-    text-decoration: none;
-
-    &Default {
-      padding: 5px 20px 2px;
-      margin-inline: 17px;
-      @include hoverEffects.underlineOnHover();
-    }
-
-    &Logo {
-      margin-right: 38px;
-      display: flex;
-      align-items: center;
-    }
-
-    &Cta {
-      margin-left: auto;
-    }
-  }
-
-  &__link {
-    font-size: 18px;
-    color: #FFF;
-    text-decoration: none;
-  }
-
-  &__logo {
-    margin-bottom: -6px;
-  }
-
-  &__ctaBtn {
-    $height: 52px;
-    $hover-transition: ease-in-out 0.3s;
-    position: relative;
-    width: 150px;
-    height: $height;
-    border-radius: calc(#{$height} / 2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 19px;
-    text-decoration: none;
-    color: #FFF;
-    background: #292929;
-    transition: $hover-transition;
-    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px, 15px);
-  }
-}

@@ -4,8 +4,8 @@ $-mediaQueries: (
         'laptop' : "only screen and (min-width: 769px) and (max-width: 1080px)",
         'desktop-all' : "only screen and (min-width: 1081px)",
         'desktop-s' : "only screen and (min-width: 1081px) and (max-width: 1200px)",
-        'desktop-l' : "only screen and (min-width: 1201px) and (max-width: 1460px)",
-        'desktop-xl' : "only screen and (min-width: 1461px)"
+        'desktop-l' : "only screen and (min-width: 1201px) and (max-width: 1462px)",
+        'desktop-xl' : "only screen and (min-width: 1463px)"
 );
 
 @mixin forDevices($devices) {

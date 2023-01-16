@@ -14,6 +14,7 @@ const AboutSection = () => {
                 height={386}
                 className={styles.aboutSection__decorationImg}
                 alt={'Product Factory - decoration badge'}
+                id={'aboutUs'}
             />
             <div className={styles.aboutSection__header}>
                 <HeadingWithBg

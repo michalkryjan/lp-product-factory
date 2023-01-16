@@ -1,0 +1,131 @@
+@use '../utils/hoverEffects' as hoverEffects;
+@use '../utils/mediaQueries' as mq;
+
+.topMenuNav {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+  background: #111111;
+  transition: transform 0.3s ease-in-out;
+
+  @include mq.forDevices(mobile tablet) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    background: #111111;
+    transform: translateX(100%);
+  }
+
+  @include mq.forDevices(laptop) {
+    width: 100%;
+    padding-inline: 12px;
+  }
+
+  &VisibleMobile {
+    transform: translateX(0);
+  }
+
+  & > ul {
+    display: contents;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: fit-content;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.25;
+
+    @include hoverEffects.underlineOnHover();
+
+    @include mq.forDevices(mobile tablet) {
+
+    }
+
+    @include mq.forDevices(laptop) {
+      padding: 5px 0 2px;
+      margin-inline: 10px;
+      font-size: 14px;
+    }
+
+    @include mq.forDevices(desktop-s) {
+      padding: 5px 13px 2px;
+      margin-inline: 7px;
+      font-size: 15px;
+    }
+
+    @include mq.forDevices(desktop-l) {
+      padding: 5px 14px 2px;
+      margin-inline: 8px;
+      font-size: 16px;
+    }
+
+    @include mq.forDevices(desktop-xl) {
+      padding: 5px 20px 2px;
+      margin-inline: 16px;
+      font-size: 18px;
+    }
+
+    &Cta {
+      margin-left: auto;
+    }
+  }
+
+  & li:not(&__item) {
+    display: contents;
+  }
+
+  &__link {
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  &__ctaBtn {
+    $height: 52px;
+    $hover-transition: ease-in-out 0.3s;
+    margin-left: auto;
+    position: relative;
+    width: 150px;
+    height: $height;
+    border-radius: calc(#{$height} / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    text-decoration: none;
+    color: #FFF;
+    background: #292929;
+    transition: $hover-transition;
+    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px, 15px);
+
+    @include mq.forDevices(mobile tablet) {
+      margin: 20px 0 0;
+    }
+
+    @include mq.forDevices(laptop) {
+      font-size: 15px;
+      height: 38px;
+      width: 115px;
+      @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 26px, 24px, 12px);
+    }
+
+    @include mq.forDevices(desktop-s) {
+      font-size: 16px;
+      height: 42px;
+      width: 130px;
+    }
+
+    @include mq.forDevices(desktop-l) {
+      font-size: 17px;
+      height: 44px;
+      width: 140px;
+    }
+  }
+}

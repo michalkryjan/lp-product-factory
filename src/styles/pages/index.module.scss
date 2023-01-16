@@ -37,6 +37,7 @@
 
     &__contentWrapper {
       @include layout.maxWidthContainer;
+      width: 100%;
       position: relative;
       display: inline-flex;
       align-items: center;

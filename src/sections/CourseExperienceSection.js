@@ -29,7 +29,7 @@ const CourseExperienceSection = () => {
                     well as Microsoft Word, Excel tools, and of course a lot of enthusiasm and energy,`
     ];
     return (
-        <section className={styles.courseExperience}>
+        <section className={styles.courseExperience} id={'courseExperience'}>
             <HeadingWithBg
                 as={'h2'}
                 text={'Course Experience'}
