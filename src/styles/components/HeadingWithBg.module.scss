@@ -1,3 +1,5 @@
+@use '../utils/mediaQueries' as mq;
+
 .headingWithBg {
   position: relative;
   width: fit-content;
@@ -15,14 +17,24 @@
       left: 2px;
       top: 20px;
       transform: translate(0, 0);
-      font-size: 38px;
       font-weight: 400;
       color: #8D8D8D;
       margin: 0;
+      @include mq.forDevices(mobile) {
+        font-size: 24px;
+      }
+      @include mq.forDevices(tablet) {
+        font-size: 30px;
+      }
+      @include mq.forDevices(desktop-xl) {
+        font-size: 38px;
+      }
     }
   }
 
   &__bg {
     z-index: 1;
+    max-width: 100%;
+    height: auto;
   }
 }

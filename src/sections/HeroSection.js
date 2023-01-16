@@ -10,7 +10,7 @@ const HeroSection = () => {
         <section className={heroStyles.hero}>
             <div className={heroStyles.hero__textWrapper}>
                 <hgroup>
-                    <h1 className={heroStyles.hero__title}>Product Design Course</h1>
+                    <h1 className={heroStyles.hero__title}>Product&nbsp;Design&nbsp;Course</h1>
                     <HeadingWithBg
                         as={'h2'}
                         text={'Product Factory'}
@@ -19,7 +19,7 @@ const HeroSection = () => {
                         bgHeight={126}
                         bgAlt={'UI UX'}
                         bgPriority={true}
-                        headingModifierClass={headingStyles.headingWithBg__headingHero}
+                        headingClass={headingStyles.headingWithBg__headingHero}
                     />
                 </hgroup>
                 <p className={heroStyles.hero__text}>
@@ -33,9 +33,10 @@ const HeroSection = () => {
             <div className={heroStyles.hero__imgWrapper}>
                 <Image
                     src={'/assets/hero-img.svg'}
-                    width={530}
-                    height={570}
+                    width={500}
+                    height={550}
                     alt={'Product Design Course - Product Factory - 30 August'}
+                    className={heroStyles.hero__img}
                     priority
                 />
             </div>

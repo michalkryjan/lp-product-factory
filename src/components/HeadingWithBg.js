@@ -10,15 +10,13 @@ const HeadingWithBg = ({
     bgWidth,
     bgHeight,
     bgPriority = false,
-    headingModifierClass
+    headingClass
 }) => {
     const Heading = as;
 
     return (
         <div className={styles.headingWithBg}>
-            <Heading className={`${styles.headingWithBg__heading} ${headingModifierClass}`}>
-                {text}
-            </Heading>
+            <Heading className={`${styles.headingWithBg__heading} ${headingClass}`}>{text}</Heading>
             <Image
                 className={styles.headingWithBg__bg}
                 src={bgSrc}

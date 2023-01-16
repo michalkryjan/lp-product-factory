@@ -1,5 +1,6 @@
 @use '../base/variables' as global_vars;
 @use '../utils/layout' as layout;
+@use '../utils/mediaQueries' as mq;
 
 .index {
   &Header {
@@ -20,6 +21,13 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 293px;
+
+      @include mq.forDevices(laptop) {
+        min-height: 740px;
+      }
+      @include mq.forDevices(desktop-l) {
+        min-height: 650px;
+      }
     }
 
     &__content {

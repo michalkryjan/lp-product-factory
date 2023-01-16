@@ -1,6 +1,7 @@
 @use '../base/variables' as global_variables;
 @use '../utils/hoverEffects' as hoverEffects;
 @use '../utils/layout' as layout;
+@use '../utils/mediaQueries' as mq;
 
 .hero {
   @include layout.bigContentCard;
@@ -8,9 +9,40 @@
   top: 162px;
   min-height: 788px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 45px;
+  grid-template-columns: 52% 48%;
+  gap: 35px;
   text-align: left;
+
+  @include mq.forDevices(mobile) {
+    gap: 20px;
+    padding: 30px;
+    width: 93%;
+  }
+  @include mq.forDevices(tablet) {
+    padding: 40px;
+  }
+  @include mq.forDevices(mobile tablet) {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: center;
+    top: 92px;
+    min-height: unset;
+  }
+  @include mq.forDevices(laptop) {
+    grid-template-columns: 55% 45%;
+    min-height: unset;
+    padding: 40px 80px 50px;
+  }
+  @include mq.forDevices(desktop-s) {
+    min-height: unset;
+    padding: 50px 100px 60px;
+  }
+  @include mq.forDevices(desktop-l) {
+    min-height: unset;
+    padding: 70px 100px 80px;
+  }
 
   &__textWrapper {
     height: 100%;
@@ -20,32 +52,86 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 30px;
+    @include mq.forDevices(mobile tablet) {
+      align-items: center;
+    }
+    @include mq.forDevices(desktop-l) {
+      max-width: 480px;
+    }
   }
 
   &__imgWrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
 
+  &__img {
+    @include mq.forDevices(desktop-l) {
+      max-width: 380px;
+    }
+  }
+
   &__title {
-    font-size: 50px;
     font-weight: bolder;
     letter-spacing: 1.5px;
     margin: 0 0 10px;
     text-shadow: -1.5px 0 0 #000;
+
+    @include mq.forDevices(mobile) {
+      font-size: 25px;
+    }
+    @include mq.forDevices(tablet) {
+      font-size: 32px;
+    }
+    @include mq.forDevices(laptop) {
+      font-size: 32px;
+    }
+    @include mq.forDevices(desktop-s) {
+      font-size: 36px;
+    }
+    @include mq.forDevices(desktop-l) {
+      font-size: 41px;
+    }
+    @include mq.forDevices(desktop-xl) {
+      font-size: 50px;
+    }
   }
 
   &__text {
-    font-size: 23px;
+    margin-bottom: 35px;
     line-height: 2.39;
+
+    @include mq.forDevices(mobile) {
+      font-size: 16px;
+      line-height: 2;
+    }
+    @include mq.forDevices(tablet) {
+      font-size: 18px;
+      max-width: 550px;
+      line-height: 2.15;
+    }
+    @include mq.forDevices(laptop) {
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+    @include mq.forDevices(desktop-s) {
+      font-size: 19px;
+    }
+    @include mq.forDevices(desktop-l) {
+      font-size: 20px;
+    }
+    @include mq.forDevices(desktop-xl) {
+      font-size: 23px;
+    }
   }
 
   &__ctaBtn {
     $hover-transition: ease-in-out 0.3s;
     margin-top: auto;
     position: relative;
-    width: 390px;
+    width: 68%;
     height: 72px;
     border-radius: 16px;
     display: flex;
@@ -57,6 +143,19 @@
     background: map-get(global_variables.$colors, primaryCta);
     color: #FFF;
     transition: $hover-transition;
-    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 100px, 95px, 24px);
+    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 21%, 20%, 24px);
+
+    @include mq.forDevices(mobile tablet laptop) {
+      font-size: 19px;
+      height: 58px;
+    }
+    @include mq.forDevices(desktop-s) {
+      font-size: 20px;
+      height: 60px;
+    }
+    @include mq.forDevices(desktop-l) {
+      font-size: 20px;
+      height: 64px;
+    }
   }
 }
