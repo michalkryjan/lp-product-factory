@@ -1,0 +1,105 @@
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 30px;
+  background: #FFF;
+}
+
+@mixin iconBefore($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  content: "";
+  top: $top;
+  background: #FFF;
+  left: 0;
+}
+
+@mixin iconAfter($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  content: "";
+  top: $top;
+  background: #FFF;
+  left: 0;
+}
+
+.hamburger {
+  $width: 64px;
+  $height: 52px;
+  $iconThickness: 6px;
+  width: $width;
+  height: $height;
+  border: none;
+  transition-duration: 0.5s;
+  background: transparent;
+
+  &__iconLeft {
+    @include icon($iconThickness, $width/2);
+    top: $height/2 - $iconThickness/2;
+    left: 0;
+
+    &:before {
+      @include iconBefore($iconThickness, $width/2, -($height/2 - $iconThickness/2));
+    }
+
+    &:after {
+      @include iconAfter($iconThickness, $width/2, $height/2 - $iconThickness/2);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__iconRight {
+    @include icon($iconThickness, $width/2);
+    left: $width/2;
+    top: $height/2 - $iconThickness/2;
+
+    &:before {
+      @include iconBefore($iconThickness, $width/2, -($height/2 - $iconThickness/2));
+    }
+
+    &:after {
+      @include iconAfter($iconThickness, $width/2, $height/2 - $iconThickness/2);
+    }
+  }
+
+  &Opened {
+    .hamburger__iconLeft {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before {
+        transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+      }
+
+      &:after {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+      }
+    }
+
+    .hamburger__iconRight {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+      }
+
+      &:after {
+        transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
