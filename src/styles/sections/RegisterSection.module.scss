@@ -1,0 +1,60 @@
+@use '../utils/layout' as layout;
+
+.registerSection {
+  width: 100%;
+  background: #000;
+  height: 603px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  &__contentWrapper {
+    @include layout.maxWidthContainer;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__textWrapper {
+    width: 50%;
+    max-width: 720px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__imgWrapper {
+    height: 110%;
+    width: 760px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: -45px;
+  }
+
+  &__title {
+    font-size: 34px;
+    color: #FFF;
+    text-shadow: -1.2px 0 0 #FFF;
+    letter-spacing: 1.5px;
+  }
+
+  &__img {
+    position: absolute;
+
+    &Outer {
+      z-index: 1;
+    }
+
+    &Inner {
+      z-index: 2;
+    }
+  }
+
+}

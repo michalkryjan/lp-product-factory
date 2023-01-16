@@ -55,7 +55,7 @@ const TopMenuBar = () => {
                         </Link>
                     </li>
                     <li className={`${styles.topMenu__item} ${styles.topMenu__itemCta}`}>
-                        <Link className={styles.topMenu__ctaBtn} href={'#start'}>
+                        <Link className={styles.topMenu__ctaBtn} href={'#register'} scroll={false}>
                             Register
                         </Link>
                     </li>

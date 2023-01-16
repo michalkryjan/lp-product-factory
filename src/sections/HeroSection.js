@@ -26,7 +26,7 @@ const HeroSection = () => {
                     Learn how design thinking, user research, business vision and marketing, and
                     finally designing and creating real digital products for real users.
                 </p>
-                <Link href={'#'} className={heroStyles.hero__ctaBtn}>
+                <Link href={'#register'} className={heroStyles.hero__ctaBtn} scroll={false}>
                     Start Register
                 </Link>
             </div>

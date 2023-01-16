@@ -78,6 +78,6 @@
     color: #FFF;
     background: #292929;
     transition: $hover-transition;
-    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px);
+    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px, 15px);
   }
 }
