@@ -1,4 +1,5 @@
 @use '../base/variables' as global_vars;
+@use '../utils/mediaQueries' as mediaQuery;
 
 @mixin maxWidthContainer {
   max-width: global_vars.$maxContentWidth;
@@ -16,4 +17,7 @@
   flex-wrap: nowrap;
   align-items: center;
   margin-bottom: 123px;
+  @include mediaQuery.forDevices(mobile) {
+    width: 93%;
+  }
 }

@@ -20,13 +20,26 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 293px;
 
+      @include mq.forDevices(mobile) {
+        margin-bottom: 148px;
+      }
+      @include mq.forDevices(tablet) {
+        margin-bottom: 150px;
+      }
       @include mq.forDevices(laptop) {
         min-height: 740px;
+        margin-bottom: 150px;
+      }
+      @include mq.forDevices(desktop-s) {
+        margin-bottom: 145px;
       }
       @include mq.forDevices(desktop-l) {
         min-height: 650px;
+        margin-bottom: 253px;
+      }
+      @include mq.forDevices(desktop-xl) {
+        margin-bottom: 293px;
       }
     }
 

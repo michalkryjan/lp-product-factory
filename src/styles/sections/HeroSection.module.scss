@@ -1,7 +1,7 @@
 @use '../base/variables' as global_variables;
 @use '../utils/hoverEffects' as hoverEffects;
 @use '../utils/layout' as layout;
-@use '../utils/mediaQueries' as mq;
+@use '../utils/mediaQueries' as mediaQuery;
 
 .hero {
   @include layout.bigContentCard;
@@ -13,15 +13,15 @@
   gap: 35px;
   text-align: left;
 
-  @include mq.forDevices(mobile) {
+  @include mediaQuery.forDevices(mobile) {
     gap: 20px;
     padding: 30px;
-    width: 93%;
+    margin-bottom: 170px;
   }
-  @include mq.forDevices(tablet) {
+  @include mediaQuery.forDevices(tablet) {
     padding: 40px;
   }
-  @include mq.forDevices(mobile tablet) {
+  @include mediaQuery.forDevices(mobile tablet) {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
@@ -30,16 +30,16 @@
     top: 92px;
     min-height: unset;
   }
-  @include mq.forDevices(laptop) {
+  @include mediaQuery.forDevices(laptop) {
     grid-template-columns: 55% 45%;
     min-height: unset;
     padding: 40px 80px 50px;
   }
-  @include mq.forDevices(desktop-s) {
+  @include mediaQuery.forDevices(desktop-s) {
     min-height: unset;
     padding: 50px 100px 60px;
   }
-  @include mq.forDevices(desktop-l) {
+  @include mediaQuery.forDevices(desktop-l) {
     min-height: unset;
     padding: 70px 100px 80px;
   }
@@ -52,10 +52,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 30px;
-    @include mq.forDevices(mobile tablet) {
+    @include mediaQuery.forDevices(mobile tablet) {
       align-items: center;
     }
-    @include mq.forDevices(desktop-l) {
+    @include mediaQuery.forDevices(desktop-l) {
       max-width: 480px;
     }
   }
@@ -67,7 +67,7 @@
   }
 
   &__img {
-    @include mq.forDevices(desktop-l) {
+    @include mediaQuery.forDevices(desktop-l) {
       max-width: 380px;
     }
   }
@@ -78,22 +78,22 @@
     margin: 0 0 10px;
     text-shadow: -1.5px 0 0 #000;
 
-    @include mq.forDevices(mobile) {
-      font-size: 25px;
+    @include mediaQuery.forDevices(mobile) {
+      font-size: 22px;
     }
-    @include mq.forDevices(tablet) {
+    @include mediaQuery.forDevices(tablet) {
       font-size: 32px;
     }
-    @include mq.forDevices(laptop) {
+    @include mediaQuery.forDevices(laptop) {
       font-size: 32px;
     }
-    @include mq.forDevices(desktop-s) {
+    @include mediaQuery.forDevices(desktop-s) {
       font-size: 36px;
     }
-    @include mq.forDevices(desktop-l) {
+    @include mediaQuery.forDevices(desktop-l) {
       font-size: 41px;
     }
-    @include mq.forDevices(desktop-xl) {
+    @include mediaQuery.forDevices(desktop-xl) {
       font-size: 50px;
     }
   }
@@ -102,27 +102,27 @@
     margin-bottom: 35px;
     line-height: 2.39;
 
-    @include mq.forDevices(mobile) {
+    @include mediaQuery.forDevices(mobile) {
       font-size: 16px;
       line-height: 2;
     }
-    @include mq.forDevices(tablet) {
+    @include mediaQuery.forDevices(tablet) {
       font-size: 18px;
       max-width: 550px;
       line-height: 2.15;
     }
-    @include mq.forDevices(laptop) {
+    @include mediaQuery.forDevices(laptop) {
       font-size: 18px;
       line-height: 2;
       margin-bottom: 25px;
     }
-    @include mq.forDevices(desktop-s) {
+    @include mediaQuery.forDevices(desktop-s) {
       font-size: 19px;
     }
-    @include mq.forDevices(desktop-l) {
+    @include mediaQuery.forDevices(desktop-l) {
       font-size: 20px;
     }
-    @include mq.forDevices(desktop-xl) {
+    @include mediaQuery.forDevices(desktop-xl) {
       font-size: 23px;
     }
   }
@@ -132,12 +132,10 @@
     margin-top: auto;
     position: relative;
     width: 68%;
-    height: 72px;
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
     text-align: center;
     text-decoration: none;
     background: map-get(global_variables.$colors, primaryCta);
@@ -145,17 +143,21 @@
     transition: $hover-transition;
     @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 21%, 20%, 24px);
 
-    @include mq.forDevices(mobile tablet laptop) {
+    @include mediaQuery.forDevices(mobile tablet laptop) {
       font-size: 19px;
       height: 58px;
     }
-    @include mq.forDevices(desktop-s) {
+    @include mediaQuery.forDevices(desktop-s) {
       font-size: 20px;
       height: 60px;
     }
-    @include mq.forDevices(desktop-l) {
+    @include mediaQuery.forDevices(desktop-l) {
       font-size: 20px;
       height: 64px;
+    }
+    @include mediaQuery.forDevices(desktop-xl) {
+      font-size: 24px;
+      height: 72px;
     }
   }
 }

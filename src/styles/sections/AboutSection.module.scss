@@ -1,35 +1,141 @@
 @use '../utils/layout' as layout;
+@use '../utils/mediaQueries' as mq;
 
 .aboutSection {
   @include layout.bigContentCard;
   padding-block: 62px;
   position: relative;
-  margin-top: 150px;
+
+  @include mq.forDevices(mobile) {
+    padding: 110px 30px 30px;
+  }
+
+  @include mq.forDevices(tablet) {
+    padding: 120px 50px 60px;
+  }
+  @include mq.forDevices(laptop) {
+    padding: 65px 70px 60px;
+  }
+  @include mq.forDevices(desktop-xl) {
+    margin-top: 150px;
+  }
 
   &__header {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 42%;
     display: flex;
     align-items: center;
-    margin: 0 0 80px auto;
+
+    @include mq.forDevices(mobile) {
+      width: 100%;
+      max-width: unset;
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 40px auto;
+    }
+    @include mq.forDevices(tablet) {
+      max-width: 550px;
+      padding-right: 50px;
+      margin: 0 0 35px auto;
+    }
+    @include mq.forDevices(laptop) {
+      padding-right: 10px;
+      margin: 0 0 40px auto;
+    }
+    @include mq.forDevices(desktop-s desktop-l) {
+      margin: 0 0 40px auto;
+    }
+    @include mq.forDevices(desktop-xl) {
+      margin: 0 0 80px auto;
+    }
   }
 
   &__text {
     font-size: 19px;
     text-align: left;
     line-height: 2.63;
+    margin-inline: 0;
+
+    @include mq.forDevices(mobile) {
+      font-size: 16px;
+      line-height: 2;
+    }
+    @include mq.forDevices(tablet) {
+      font-size: 17px;
+      line-height: 2.4;
+      margin-bottom: 0;
+      max-width: 550px;
+    }
+    @include mq.forDevices(laptop) {
+      font-size: 17px;
+      line-height: 2.4;
+      margin-bottom: 0;
+    }
+    @include mq.forDevices(desktop-s desktop-l) {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
   }
 
   &__socialsNav {
     position: absolute;
-    right: 0;
-    top: 10px;
+
+    @include mq.forDevices(mobile) {
+      margin-top: -15px;
+      position: relative;
+      display: inline-flex !important;
+      flex-direction: row !important;
+    }
+    @include mq.forDevices(mobile tablet) {
+      right: 0;
+      top: 18px;
+    }
+    @include mq.forDevices(laptop) {
+      right: -45px;
+      top: 0;
+    }
+    @include mq.forDevices(desktop-s desktop-l) {
+      right: -80px;
+    }
+    @include mq.forDevices(desktop-xl) {
+      right: 0;
+      top: 10px;
+    }
   }
 
   &__decorationImg {
     position: absolute;
-    left: 120px;
-    top: -165px;
+
+    @include mq.forDevices(mobile) {
+      max-width: 85%;
+      right: 12px;
+      top: -80px;
+    }
+    @include mq.forDevices(tablet) {
+      max-width: 340px;
+      right: 12px;
+      top: -80px;
+    }
+    @include mq.forDevices(laptop) {
+      max-width: 380px;
+      left: 25px;
+      top: -60px;
+    }
+    @include mq.forDevices(desktop-s) {
+      max-width: 460px;
+      left: 40px;
+      top: -60px;
+    }
+    @include mq.forDevices(desktop-l) {
+      max-width: 520px;
+      left: 40px;
+      top: -60px;
+    }
+    @include mq.forDevices(desktop-xl) {
+      left: 120px;
+      top: -165px;
+      max-width: 650px;
+    }
   }
 }

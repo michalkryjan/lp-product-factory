@@ -97,8 +97,10 @@
     color: #FFF;
     background: #292929;
     transition: $hover-transition;
-    @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px, 15px);
 
+    @include mq.forDevices(desktop-all) {
+      @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 28px, 26px, 15px);
+    }
     @include mq.forDevices(mobile tablet) {
       margin: 20px 0 0;
     }
@@ -106,7 +108,6 @@
       font-size: 15px;
       height: 38px;
       width: 115px;
-      @include hoverEffects.ctaArrowFadeOnHover($hover-transition, 26px, 24px, 12px);
     }
     @include mq.forDevices(desktop-s) {
       font-size: 16px;

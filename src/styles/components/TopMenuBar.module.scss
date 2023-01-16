@@ -26,16 +26,13 @@
       display: block;
       position: absolute;
       $width: 30px;
-
       right: 20px;
     }
-
     @include mq.forDevices(mobile) {
       display: block;
       position: absolute;
       right: 20px;
     }
-
     @include mq.forDevices(laptop desktop-all) {
       display: none;
     }
@@ -51,22 +48,18 @@
       max-width: 100px;
       top: 5px;
     }
-
     @include mq.forDevices(laptop) {
       max-height: 40px;
       margin-right: 0;
     }
-
     @include mq.forDevices(desktop-s) {
       max-height: 44px;
       margin-right: 10px;
     }
-
     @include mq.forDevices(desktop-l) {
       max-height: 48px;
       margin-right: 22px;
     }
-
     @include mq.forDevices(desktop-xl) {
       margin-bottom: -6px;
       margin-right: 38px;
@@ -83,7 +76,6 @@
     @include mq.forDevices(mobile tablet) {
       width: 100%;
     }
-
     @include mq.forDevices(laptop) {
       width: 100%;
       padding-inline: 25px;
