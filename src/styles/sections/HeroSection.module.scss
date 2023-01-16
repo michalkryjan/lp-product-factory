@@ -16,6 +16,8 @@
   @include mediaQuery.forDevices(mobile) {
     gap: 20px;
     padding: 30px;
+  }
+  @include mediaQuery.forDevices(mobile tablet) {
     margin-bottom: 170px;
   }
   @include mediaQuery.forDevices(tablet) {
@@ -27,7 +29,7 @@
     flex-direction: column-reverse;
     flex-wrap: nowrap;
     align-items: center;
-    top: 92px;
+    top: 100px;
     min-height: unset;
   }
   @include mediaQuery.forDevices(laptop) {

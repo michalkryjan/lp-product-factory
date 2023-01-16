@@ -29,17 +29,24 @@ const RegisterForm = () => {
     const submitForm = event => {
         event.preventDefault();
         if (isEmailValid(email)) {
-            axios
-                .post('here goes Product Factory API URL', {
-                    form: 'Product Design - Request a list of Headings',
-                    email: email
-                })
-                .then(response => {
-                    response.status === 200 ? setSuccess(true) : setRequestError(true);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            // PROGRAMMER NOTE:
+            // for the visual preview of this project I set every valid email submit as success
+
+            // DELETE LINE BELOW:
+            setSuccess(true);
+
+            // UNCOMMENT CODE BELOW:
+            // axios
+            //     .post('here goes Product Factory API URL', {
+            //         form: 'Product Design - Request a list of Headings',
+            //         email: email
+            //     })
+            //     .then(response => {
+            //         response.status === 200 ? setSuccess(true) : setRequestError(true);
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            //     });
         } else {
             setInvalidEmail(true);
         }
@@ -87,6 +94,7 @@ const RegisterForm = () => {
                             width={27}
                             height={27}
                             alt={'Success icon'}
+                            className={styles.registerForm__msgIcon}
                         />
                         Your email has been successfully registered, headlines will be sent to you
                         soon.

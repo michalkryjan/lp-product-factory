@@ -20,4 +20,7 @@
   @include mediaQuery.forDevices(mobile) {
     width: 93%;
   }
+  @include mediaQuery.forDevices(mobile tablet) {
+    margin-bottom: 70px;
+  }
 }
