@@ -7,7 +7,7 @@ import headingStyles from '@/styles/components/HeadingWithBg.module.scss';
 
 const HeroSection = () => {
     return (
-        <section className={heroStyles.hero}>
+        <section className={heroStyles.hero} id={'start'}>
             <div className={heroStyles.hero__textWrapper}>
                 <hgroup>
                     <h1 className={heroStyles.hero__title}>Product&nbsp;Design&nbsp;Course</h1>

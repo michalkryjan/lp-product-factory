@@ -1,7 +1,6 @@
 import React from 'react';
 import HeadingWithBg from '@/components/HeadingWithBg';
 import styles from '@/styles/sections/AboutSection.module.scss';
-import headingStyles from '@/styles/components/HeadingWithBg.module.scss';
 import SocialsNav from '@/components/SocialsNav';
 import Image from 'next/image';
 

@@ -46,7 +46,12 @@ const TopMenuBar = () => {
                     : ''
             }`}>
             <div className={styles.topMenuBar__contentWrapper}>
-                <Link href={'#start'}>
+                <Link
+                    href={'#start'}
+                    scroll={false}
+                    onClick={() => {
+                        mobileVersion ? setIsMenuOpened(false) : null;
+                    }}>
                     <Image
                         className={styles.topMenuBar__logo}
                         src={'/assets/company-logo-white.svg'}

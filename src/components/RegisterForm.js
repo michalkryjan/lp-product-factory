@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import styles from '@/styles/components/RegisterForm.module.scss';
 import Image from 'next/image';
 
