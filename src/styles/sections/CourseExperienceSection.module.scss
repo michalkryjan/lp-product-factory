@@ -1,6 +1,17 @@
 @use '../utils/layout' as layout;
+@use '../utils/mediaQueries' as mediaQuery;
 
 .courseExperience {
   @include layout.bigContentCard;
   padding-bottom: 110px;
+
+  @include mediaQuery.forDevices(mobile) {
+    padding: 50px 30px 50px;
+  }
+  @include mediaQuery.forDevices(tablet) {
+    padding: 50px 50px 30px;
+  }
+  @include mediaQuery.forDevices(laptop) {
+    padding: 50px 70px 50px;
+  }
 }

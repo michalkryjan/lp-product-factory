@@ -32,7 +32,7 @@ const CourseExperienceSection = () => {
         <section className={styles.courseExperience} id={'courseExperience'}>
             <HeadingWithBg
                 as={'h2'}
-                text={'Course Experience'}
+                text={`Course Experience`}
                 bgSrc={'/assets/heading-backgrounds/Experience.svg'}
                 bgWidth={612}
                 bgHeight={159}

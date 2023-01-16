@@ -1,3 +1,5 @@
+@use '../utils/mediaQueries' as mediaQuery;
+
 .stackedTextSwitchMenu {
   list-style-type: none;
   padding: 0;
@@ -6,6 +8,29 @@
   height: 60px;
   display: inline-flex;
   margin: 65px 0 88px -1px;
+
+  @include mediaQuery.forDevices(mobile tablet) {
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: fit-content;
+    margin-top: 25px;
+  }
+  @include mediaQuery.forDevices(laptop) {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  @include mediaQuery.forDevices(desktop-s) {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  @include mediaQuery.forDevices(desktop-l) {
+    margin-bottom: 60px;
+  }
 
   & > li {
     display: contents;
@@ -20,6 +45,18 @@
     color: #000;
     transition: ease 0.3s;
     margin-right: -1px;
+    padding: 5px 10px;
+
+    @include mediaQuery.forDevices(mobile tablet) {
+      font-size: 16px;
+      border-radius: 18px !important;
+      height: fit-content;
+      padding: 14px 10px;
+    }
+
+    @include mediaQuery.forDevices(laptop) {
+      font-size: 17px;
+    }
 
     &Active {
       background: #000;
@@ -48,15 +85,45 @@
 .stackedTextSwitch {
   width: 100%;
   max-width: 1174px;
-  min-height: 320px;
+  min-height: 360px;
   display: inline-flex;
   gap: 80px;
+
+  @include mediaQuery.forDevices(mobile tablet laptop) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+  @include mediaQuery.forDevices(desktop-s) {
+    min-height: 400px;
+    gap: 30px;
+  }
+  @include mediaQuery.forDevices(desktop-l) {
+    gap: 50px;
+  }
 
   &__layersWrapper {
     position: relative;
     flex-grow: 1;
     height: 100%;
     padding: 10px;
+
+    @include mediaQuery.forDevices(mobile) {
+      flex-grow: unset;
+      min-height: 420px;
+      width: 100%;
+    }
+    @include mediaQuery.forDevices(tablet) {
+      flex-grow: unset;
+      min-height: 360px;
+      width: 100%;
+    }
+    @include mediaQuery.forDevices(laptop) {
+      flex-grow: unset;
+      min-height: 250px;
+      width: 100%;
+    }
   }
 
   &__layer {
@@ -76,9 +143,35 @@
     font-size: 20px;
     text-align: left;
     line-height: 2.4;
+
+    @include mediaQuery.forDevices(mobile) {
+      font-size: 16px;
+      line-height: 2;
+    }
+    @include mediaQuery.forDevices(tablet) {
+      font-size: 17px;
+      line-height: 2;
+    }
+    @include mediaQuery.forDevices(laptop) {
+      font-size: 17px;
+      line-height: 2.1;
+    }
+    @include mediaQuery.forDevices(desktop-s desktop-l) {
+      font-size: 19px;
+      line-height: 2.2;
+    }
   }
 
   &__decorationImg {
-    margin-top: 35px;
+    margin-top: 50px;
+    @include mediaQuery.forDevices(mobile tablet) {
+      max-width: 210px;
+    }
+    @include mediaQuery.forDevices(laptop) {
+      max-width: 210px;
+    }
+    @include mediaQuery.forDevices(desktop-s desktop-l) {
+      max-width: 250px;
+    }
   }
 }
