@@ -44,11 +44,14 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
-    &:-webkit-autofill:active,
-    &:-webkit-autofill:target {
+    &:-webkit-autofill:active {
       border-color: $bg-color !important;
       -webkit-text-fill-color: $text-color;
       -webkit-box-shadow: 0 0 0 100px $bg-color inset !important;
+    }
+
+    &::placeholder {
+      font-size: 18px;
     }
   }
 

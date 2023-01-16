@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import React from 'react';
-import TopMenuBar from '@/components/TopMenuBar';
 import HeroSection from '@/sections/HeroSection';
+import AboutSection from '@/sections/AboutSection';
 import CourseExperienceSection from '@/sections/CourseExperienceSection';
+import RegisterSection from '@/sections/RegisterSection';
+import TopMenuBar from '@/components/TopMenuBar';
 import SocialsNav from '@/components/SocialsNav';
 import Image from 'next/image';
 import styles from '@/styles/pages/index.module.scss';
-import RegisterSection from '@/sections/RegisterSection';
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
                 <div className={styles.indexMain__header}>
                     <HeroSection />
                 </div>
+                <AboutSection />
                 <CourseExperienceSection />
                 <RegisterSection />
             </main>

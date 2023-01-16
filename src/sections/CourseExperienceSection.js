@@ -47,7 +47,7 @@ const CourseExperienceSection = () => {
                 ]}
                 contentLists={[paragraphsTab1, paragraphsTab2, paragraphsTab3]}
                 initialActiveLayerId={2}
-                decorationImgSrc={'assets/course-experience-decoration.svg'}
+                decorationImgSrc={'/assets/course-experience-decoration.svg'}
                 imgWidth={326}
                 imgHeight={281}
                 imgAlt={'Product Factory badge'}

@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/components/SocialsNav.module.scss';
 
-const SocialsNav = ({ vertical = false, iconSize }) => {
+const SocialsNav = ({ vertical = false, iconSize, className }) => {
     return (
         <nav
             className={`${styles.socialsNav} ${
                 vertical ? styles.socialsNavVertical : styles.socialsNavHorizontal
-            }`}>
+            } ${className}`}>
             <ul>
                 <li>
                     <Link href={'#'} rel={'nofollow'} target={'_blank'}>

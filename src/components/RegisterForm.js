@@ -29,7 +29,6 @@ const RegisterForm = () => {
     const submitForm = event => {
         event.preventDefault();
         if (isEmailValid(email)) {
-            setSuccess(true);
             axios
                 .post('here goes Product Factory API URL', {
                     form: 'Product Design - Request a list of Headings',
@@ -58,6 +57,7 @@ const RegisterForm = () => {
                     id={'email'}
                     name={'email'}
                     value={email}
+                    placeholder={'enter your email address...'}
                     onChange={handleEmailChange}
                     className={styles.registerForm__input}
                 />
@@ -71,7 +71,7 @@ const RegisterForm = () => {
             <div className={styles.registerForm__messagePlaceholder}>
                 {invalidEmail ? (
                     <p className={`${styles.registerForm__msg} ${styles.registerForm__msgError}`}>
-                        Invalid email format. Please try again.
+                        Invalid email. Please try again.
                     </p>
                 ) : null}
                 {requestError ? (

@@ -1,0 +1,35 @@
+@use '../utils/layout' as layout;
+
+.aboutSection {
+  @include layout.bigContentCard;
+  padding-block: 62px;
+  position: relative;
+  margin-top: 150px;
+
+  &__header {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 80px auto;
+  }
+
+  &__text {
+    font-size: 19px;
+    text-align: left;
+    line-height: 2.63;
+  }
+
+  &__socialsNav {
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  &__decorationImg {
+    position: absolute;
+    left: 120px;
+    top: -165px;
+  }
+}
