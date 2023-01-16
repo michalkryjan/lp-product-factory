@@ -1,6 +1,6 @@
 @use '../base/variables' as global_vars;
 @use '../utils/layout' as layout;
-@use '../utils/mediaQueries' as mq;
+@use '../utils/mediaQueries' as mediaQuery;
 
 .index {
   &Header {
@@ -21,24 +21,24 @@
       flex-direction: column;
       align-items: center;
 
-      @include mq.forDevices(mobile) {
+      @include mediaQuery.forDevices(mobile) {
         margin-bottom: 148px;
       }
-      @include mq.forDevices(tablet) {
+      @include mediaQuery.forDevices(tablet) {
         margin-bottom: 150px;
       }
-      @include mq.forDevices(laptop) {
+      @include mediaQuery.forDevices(laptop) {
         min-height: 740px;
         margin-bottom: 150px;
       }
-      @include mq.forDevices(desktop-s) {
+      @include mediaQuery.forDevices(desktop-s) {
         margin-bottom: 145px;
       }
-      @include mq.forDevices(desktop-l) {
+      @include mediaQuery.forDevices(desktop-l) {
         min-height: 650px;
         margin-bottom: 253px;
       }
-      @include mq.forDevices(desktop-xl) {
+      @include mediaQuery.forDevices(desktop-xl) {
         margin-bottom: 293px;
       }
     }
@@ -56,25 +56,62 @@
     justify-content: center;
     background: #FFF;
 
+    @include mediaQuery.forDevices(mobile tablet) {
+      height: fit-content;
+    }
+    @include mediaQuery.forDevices(laptop) {
+      height: 180px;
+    }
+    @include mediaQuery.forDevices(desktop-s desktop-l) {
+      height: 220px;
+    }
+
     &__contentWrapper {
       @include layout.maxWidthContainer;
-      width: 100%;
+      width: 90%;
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 15px;
+
+      @include mediaQuery.forDevices(mobile tablet) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding-top: 35px;
+      }
+      @include mediaQuery.forDevices(laptop) {
+        width: 95%;
+      }
     }
 
     &__companyLogo {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      @include mediaQuery.forDevices(mobile tablet) {
+        max-width: 140px;
+        position: relative;
+        transform: none;
+        left: unset;
+        margin-top: 20px;
+      }
+      @include mediaQuery.forDevices(laptop) {
+        max-width: 140px;
+      }
     }
 
     &__additionalInfo {
       font-size: 20px;
       color: #000;
+      @include mediaQuery.forDevices(mobile tablet laptop) {
+        font-size: 16px;
+      }
+      @include mediaQuery.forDevices(desktop-s) {
+        font-size: 18px;
+      }
     }
   }
 }
